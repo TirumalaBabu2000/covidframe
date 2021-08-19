@@ -7,7 +7,7 @@
             dataType: tableau.dataTypeEnum.string
         }, {
             id: "confirmed",
-            alias: "cases",
+            alias: "confirmed",
             dataType: tableau.dataTypeEnum.float
         }, {
             id: "deaths",
@@ -35,10 +35,10 @@
             // Iterate over the JSON object
             for (var i = 0, len = feat.length; i < len; i++) {
                 tableData.push({
-                    "id": feat[i].id,
-                    "mag": feat[i].properties.mag,
-                    "title": feat[i].properties.title,
-                    "location": feat[i].geometry
+                    "id": feat[i].date,
+                    "confirmed": feat[i].properties.confirmed,
+                    "deaths": feat[i].properties.deaths,
+                    "recovered": feat[i].properties.recovered
                 });
             }
     
@@ -51,7 +51,7 @@
 })();
 $(document).ready(function () {
     $("#submitButton").click(function () {
-        tableau.connectionName = "USGS Covid Feed";
+        tableau.connectionName = "Covid Feed";
         tableau.submit();
     });
 });
