@@ -4,7 +4,7 @@
     myConnector.getSchema = function (schemaCallback) {
         var cols = [{
             id: "date",
-            dataType: tableau.dataTypeEnum.string
+            dataType: tableau.dataTypeEnum.datetime
         }, {
             id: "confirmed",
             alias: "confirmed",
@@ -35,10 +35,10 @@
             // Iterate over the JSON object
             for (var i = 0, len = feat.length; i < len; i++) {
                 tableData.push({
-                    "id": feat[i].date,
-                    "confirmed": feat[i].properties.confirmed,
-                    "deaths": feat[i].properties.deaths,
-                    "recovered": feat[i].properties.recovered
+                    "date": feat[i].date,
+                    "confirmed": feat[i].confirmed,
+                    "deaths": feat[i].deaths,
+                    "recovered": feat[i].recovered
                 });
             }
     
