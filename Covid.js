@@ -28,7 +28,7 @@
     };
 
     myConnector.getData = function (table, doneCallback) {
-        $.getJSON("https://github.com/pomber/covid19/blob/master/docs/timeseries.json", function(resp) {
+        $.getJSON("https://raw.githubusercontent.com/pomber/covid19/master/docs/timeseries.json", function(resp) {
             var feat = resp.features,
                 tableData = [];
     
